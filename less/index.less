@@ -75,6 +75,14 @@ html, body {
 	padding-bottom: 2%;
 }
 
+.verticalPad() {
+	padding: 1% 0;
+}
+
+.pHeight() {
+	line-height: 2.5rem;
+}
+
 //Variables
 @headerbg: lightgray;
 @darkbg: gray;
@@ -91,28 +99,46 @@ body {
 
 	nav {
 		.flexVar();
-		justify-content: space-evenly;
+		justify-content: space-between;
+		width: 50%;
+		padding-bottom: 2%;
 
-		nav a {
+		a {
 			text-decoration: none;
+			color: black;			
 		}
 	}
 }
 
 header {
 	background-color: @headerbg;
+	padding: 4% 2%;
+
+	.headerImg {
+		width: 30%;
+	}
 
 	h1 {
-		font-size: 4rem;
+		font-size: 7rem;
+		.verticalPad();
 	}
 	
 	h2 {
 		font-size: 2.5rem;
+		.verticalPad();
+	}
+
+	p {
+		.verticalPad();
+		.pHeight();
 	}
 
 	button {
 		color: white;
 		background-color: @darkbg;
+		font-size: 2.5rem;
+		border-radius: 7px;
+		padding: 0.5%;
 	}
 }
 
@@ -122,6 +148,8 @@ header {
 
 	.contentText {
 		.contentSize();
+		padding-right: 2%;
+		.pHeight();
 
 		h2 {
 			font-size: 3.5rem;
@@ -155,15 +183,35 @@ header {
 	h2{
 		font-size: 2.8rem;
 		font-weight: bold;
+		padding: 2% 0;
 	}
 
 	p {
+		padding: 1%;
+		width: 25%;
+
+		.firstChild{
+			font-weight: bold;
+		}
+	}
+
+	div {
+		.flexVar();
 		border: 1px solid lightgray;
-		
+	}
+
+	.lineOne {
+		font-weight: bold;
+	}
+
+	div.lineFour, div.lineTwo {
+		background-color: @headerbg;
 	}
 }
 
 footer {
 	background-color: @darkbg;
 	color: white;
+	text-align: center;
+	padding: 2%;
 }

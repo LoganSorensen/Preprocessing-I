@@ -147,23 +147,39 @@ body {
 }
 .navClass nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 50%;
+  padding-bottom: 2%;
 }
-.navClass nav nav a {
+.navClass nav a {
   text-decoration: none;
+  color: black;
 }
 header {
   background-color: lightgray;
+  padding: 4% 2%;
+}
+header .headerImg {
+  width: 30%;
 }
 header h1 {
-  font-size: 4rem;
+  font-size: 7rem;
+  padding: 1% 0;
 }
 header h2 {
   font-size: 2.5rem;
+  padding: 1% 0;
+}
+header p {
+  padding: 1% 0;
+  line-height: 2.5rem;
 }
 header button {
   color: white;
   background-color: gray;
+  font-size: 2.5rem;
+  border-radius: 7px;
+  padding: 0.5%;
 }
 .content {
   display: flex;
@@ -172,6 +188,8 @@ header button {
 .content .contentText {
   width: 50%;
   padding-top: 2%;
+  padding-right: 2%;
+  line-height: 2.5rem;
 }
 .content .contentText h2 {
   font-size: 3.5rem;
@@ -200,11 +218,29 @@ header button {
 .workHistory h2 {
   font-size: 2.8rem;
   font-weight: bold;
+  padding: 2% 0;
 }
 .workHistory p {
+  padding: 1%;
+  width: 25%;
+}
+.workHistory p .firstChild {
+  font-weight: bold;
+}
+.workHistory div {
+  display: flex;
   border: 1px solid lightgray;
+}
+.workHistory .lineOne {
+  font-weight: bold;
+}
+.workHistory div.lineFour,
+.workHistory div.lineTwo {
+  background-color: lightgray;
 }
 footer {
   background-color: gray;
   color: white;
+  text-align: center;
+  padding: 2%;
 }
