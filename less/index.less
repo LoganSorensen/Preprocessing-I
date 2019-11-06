@@ -53,7 +53,117 @@ table {
     box-sizing: border-box;
 }
 
+html {
+	font-size: 62.5%;
+}
+
 html, body {
     height: 100%;
 }
 
+//Mixins
+.flexVar() {
+	display: flex;
+}
+
+.contentSize() {
+	width: 50%;
+	padding-top: 2%;
+}
+
+.h2Padding() {
+	padding-bottom: 2%;
+}
+
+//Variables
+@headerbg: lightgray;
+@darkbg: gray;
+
+//Content Styling
+body {
+	font-size: 2rem;
+	padding: 2% 3% 0;
+}
+
+.navClass {
+	.flexVar();
+	justify-content: flex-end;
+
+	nav {
+		.flexVar();
+		justify-content: space-evenly;
+
+		nav a {
+			text-decoration: none;
+		}
+	}
+}
+
+header {
+	background-color: @headerbg;
+
+	h1 {
+		font-size: 4rem;
+	}
+	
+	h2 {
+		font-size: 2.5rem;
+	}
+
+	button {
+		color: white;
+		background-color: @darkbg;
+	}
+}
+
+.content {
+	.flexVar();
+	flex-wrap: wrap;
+
+	.contentText {
+		.contentSize();
+
+		h2 {
+			font-size: 3.5rem;
+			font-weight: bold;
+			.h2Padding();
+		}
+	}
+
+	.contentSkills {
+		.contentSize();
+
+		h2 {
+			font-size: 2.8rem;
+			font-weight: bold;
+			.h2Padding();
+		}
+
+		p {
+			border: 1px solid @headerbg;
+			padding: 2%;
+		}
+	}
+}
+
+.workHistory {
+	width: 100%;
+	padding: 2% 0;
+	.flexVar();
+	flex-direction: column;
+
+	h2{
+		font-size: 2.8rem;
+		font-weight: bold;
+	}
+
+	p {
+		border: 1px solid lightgray;
+		
+	}
+}
+
+footer {
+	background-color: @darkbg;
+	color: white;
+}
