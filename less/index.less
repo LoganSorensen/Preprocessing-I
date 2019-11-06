@@ -100,12 +100,17 @@ body {
 	nav {
 		.flexVar();
 		justify-content: space-between;
-		width: 50%;
+		width: 40%;
 		padding-bottom: 2%;
 
 		a {
 			text-decoration: none;
 			color: black;			
+		}
+
+		@media (max-width: 500px){
+			width: 100%;
+			justify-content: space-evenly;
 		}
 	}
 }
@@ -114,13 +119,25 @@ header {
 	background-color: @headerbg;
 	padding: 4% 2%;
 
+	h2 {
+		border-bottom: 1px solid gray;
+	}
+
 	.headerImg {
 		width: 30%;
+
+		@media (max-width: 500px){
+			width: 100%;
+		}
 	}
 
 	h1 {
 		font-size: 7rem;
 		.verticalPad();
+
+		@media (max-width: 500px){
+			font-size: 5rem;
+		}
 	}
 	
 	h2 {
@@ -156,6 +173,11 @@ header {
 			font-weight: bold;
 			.h2Padding();
 		}
+
+		@media (max-width: 500px){
+			width: 100%;
+			padding: 5% 0;
+		}
 	}
 
 	.contentSkills {
@@ -170,6 +192,10 @@ header {
 		p {
 			border: 1px solid @headerbg;
 			padding: 2%;
+		}
+
+		@media (max-width: 500px){
+			width: 100%;
 		}
 	}
 }
@@ -206,6 +232,17 @@ header {
 
 	div.lineFour, div.lineTwo {
 		background-color: @headerbg;
+	}
+
+	@media (max-width: 500px){
+		width: 100%;
+		padding: 5% 0;
+	}
+}
+
+.contact {
+	h3 {
+		font-weight: bold;
 	}
 }
 
