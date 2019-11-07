@@ -53,7 +53,204 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html {
+	font-size: 62.5%;
 }
 
+html, body {
+	height: 100%;
+	font-family: @bodyFont;
+}
+
+//Mixins
+.flexVar() {
+	display: flex;
+}
+
+.contentSize() {
+	width: 50%;
+	padding-top: 2%;
+}
+
+.h2Padding() {
+	padding-bottom: 2%;
+}
+
+.verticalPad() {
+	padding: 1% 0;
+}
+
+.pHeight() {
+	line-height: 2.5rem;
+}
+
+//Variables
+@headerbg: lightgray;
+@darkbg: gray;
+@bodyFont:'Roboto', sans-serif;
+
+//Content Styling
+body {
+	font-size: 2rem;
+	padding: 2% 3% 0;
+}
+
+.navClass {
+	.flexVar();
+	justify-content: flex-end;
+
+	nav {
+		.flexVar();
+		justify-content: space-between;
+		width: 40%;
+		padding-bottom: 2%;
+
+		a {
+			text-decoration: none;
+			color: black;			
+		}
+
+		@media (max-width: 500px){
+			width: 100%;
+			justify-content: space-evenly;
+		}
+	}
+}
+
+header {
+	background-color: @headerbg;
+	padding: 4% 2%;
+
+	h2 {
+		border-bottom: 1px solid gray;
+	}
+
+	.headerImg {
+		width: 30%;
+
+		@media (max-width: 500px){
+			width: 100%;
+		}
+	}
+
+	h1 {
+		font-size: 7rem;
+		.verticalPad();
+
+		@media (max-width: 500px){
+			font-size: 5rem;
+		}
+	}
+	
+	h2 {
+		font-size: 2.5rem;
+		.verticalPad();
+	}
+
+	p {
+		.verticalPad();
+		.pHeight();
+	}
+
+	button {
+		color: white;
+		background-color: @darkbg;
+		font-size: 2.5rem;
+		border-radius: 7px;
+		padding: 0.5%;
+	}
+}
+
+.content {
+	.flexVar();
+	flex-wrap: wrap;
+
+	.contentText {
+		.contentSize();
+		padding-right: 2%;
+		.pHeight();
+
+		h2 {
+			font-size: 3.5rem;
+			font-weight: bold;
+			.h2Padding();
+		}
+
+		@media (max-width: 500px){
+			width: 100%;
+			padding: 5% 0;
+		}
+	}
+
+	.contentSkills {
+		.contentSize();
+
+		h2 {
+			font-size: 2.8rem;
+			font-weight: bold;
+			.h2Padding();
+		}
+
+		p {
+			border: 1px solid @headerbg;
+			padding: 2%;
+		}
+
+		@media (max-width: 500px){
+			width: 100%;
+		}
+	}
+}
+
+.workHistory {
+	width: 100%;
+	padding: 2% 0;
+	.flexVar();
+	flex-direction: column;
+
+	h2{
+		font-size: 2.8rem;
+		font-weight: bold;
+		padding: 2% 0;
+	}
+
+	p {
+		padding: 1%;
+		width: 25%;
+
+		.firstChild{
+			font-weight: bold;
+		}
+	}
+
+	div {
+		.flexVar();
+		border: 1px solid lightgray;
+	}
+
+	.lineOne {
+		font-weight: bold;
+	}
+
+	div.lineFour, div.lineTwo {
+		background-color: @headerbg;
+	}
+
+	@media (max-width: 500px){
+		width: 100%;
+		padding: 5% 0;
+	}
+}
+
+.contact {
+	h3 {
+		font-weight: bold;
+	}
+}
+
+footer {
+	background-color: @darkbg;
+	color: white;
+	text-align: center;
+	padding: 2%;
+}
